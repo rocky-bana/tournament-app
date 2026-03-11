@@ -21,7 +21,13 @@ User Interface is Build on React and Tailwind css
 
 Database is created on postgresql (Structured querry Language ) 
 
-Fast api is on Python.
+# University Documentation
+
+Comprehensive university-style project documentation is available in the [**doc/**](./doc/index.md) folder.
+
+- [Introduction](./doc/introduction.md)
+- [System Design](./doc/system_design.md)
+- [User Manual](./doc/user_manual.md)
 
 
 # Database Schema
