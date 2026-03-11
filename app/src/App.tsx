@@ -1,31 +1,23 @@
-import { useEffect, useState } from 'react';
-import './App.css'
+import { useState } from 'react';
+import Header from './components/header';
+import PlayerManager from './components/PlayerManager';
+import TeamManager from './components/TeamManager';
+import MatchManager from './components/MatchManager';
+import Footer from './components/Footer';
 
 function App() {
-  const [data, setData] = useState(null);
-   const [inputValue, setInputValue] = useState('');
+  const [currentView, setCurrentView] = useState<'players' | 'teams' | 'matches'>('players');
 
-  useEffect(() => {
-  fetch('http://localhost:8000/items/' + inputValue)
-    .then(response => response.json())
-    .then(data => 
-      setData(data)
-    );
-}, [inputValue]);
   return (
-      <div>
-        <h1>Hello World</h1>
-         <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Enter something..."
-        />
-
-        <p>{data ? `Item ID: ${data.Id}, Item Name: ${data.Name}` : 'Loading...'}</p>
-        
-      </div>
-  
+    <div className='bg-sky-50 min-h-screen flex flex-col'>
+      <Header activeView={currentView} onViewChange={(view: any) => setCurrentView(view)} />
+      <main className="flex-grow py-4">
+        {currentView === 'players' && <PlayerManager />}
+        {currentView === 'teams' && <TeamManager />}
+        {currentView === 'matches' && <MatchManager />}
+      </main>
+      <Footer />
+    </div>
   )
 }
 

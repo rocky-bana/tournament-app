@@ -1,32 +1,6 @@
-# Activate Python
-use to activate python enviorment using 
+# Database ER Diagram
 
-`.\.venv\Scripts\activate`
-
-# How to run api
-cd api 
-fastapi dev main.py
-
-# How to run app
-cd app
-npm run dev
-
-
-# SQl
-Structured query language
-
-# technologies used to create this system 
-
-User Interface is Build on React and Tailwind css
-
-Database is created on postgresql (Structured querry Language ) 
-
-Fast api is on Python.
-
-
-# Database Schema
-
-Below is the Entity Relationship Diagram (ERD) for the Tournament Database.
+This document contains the Entity Relationship Diagram for the Tournament Database.
 
 ```mermaid
 erDiagram
@@ -65,5 +39,3 @@ erDiagram
         string Status
     }
 ```
-
-Detailed information can be found in [ER_DIAGRAM.md](./ER_DIAGRAM.md).
